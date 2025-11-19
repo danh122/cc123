@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeVault: Tạo Paste Mới</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="light-mode">
+
+    <div class="container">
+        
+        <div class="header">
+            <h1>💻 Note Paste Dang Danh</h1>
+            <p>Nền tảng lưu trữ và chia sẻ mã nguồn đơn giản, an toàn và hiệu quả.</p>
+        </div>
+
+        <div class="note-card">
+            <div class="note-form">
+                
+                <div class="form-group">
+                    <input type="text" id="noteTitle" placeholder="Tiêu đề (Không bắt buộc)...">
+                </div>
+                
+                <textarea id="noteContent" placeholder="Dán mã nguồn của bạn vào đây..."></textarea>
+                
+                <details class="config-details">
+                    <summary>⚙️ Cấu hình Tùy chọn</summary>
+                    <div class="form-options">
+                        <select id="syntaxHighlight">
+                            <option value="text">Văn bản thường</option>
+                            <option value="javascript">JavaScript</option>
+                            <option value="python">Python</option>
+                            <option value="java">Java</option>
+                            <option value="html">HTML</option>
+                            <option value="css">CSS</option>
+                            <option value="bash">Bash</option>
+                        </select>
+                        
+                        <select id="expiryTime">
+                            <option value="never">Không giới hạn</option>
+                            <option value="3600">1 Giờ</option> 
+                            <option value="86400">1 Ngày</option>
+                            <option value="604800">1 Tuần</option>
+                        </select>
+                    </div>
+                    
+                    <div class="private-option">
+                        <input type="checkbox" id="privatePaste">
+                        <label for="privatePaste">Paste Riêng tư (Chỉ truy cập bằng link)</label>
+                    </div>
+                </details>
+
+                <div class="form-group">
+                    <button id="saveNoteBtn">Lưu & Lấy Link</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="api-doc-card note-card">
+            <h2>🔌 API Documentation</h2>
+
+            <h3 class="api-method">Tạo Paste (Create)</h3>
+            <p><strong>POST</strong> <code>/api/paste</code></p>
+            <pre class="api-code-block"><code>{
+  "title": "Tên paste",
+  "content": "Nội dung code",
+  "language": "javascript",
+  "expiresIn": 3600, // Tính bằng giây
+  "isPrivate": false
+}</code></pre>
+            <p class="api-note">💡 Mặc định <code>isPrivate: true</code> (riêng tư) nếu không gửi parameter.</p>
+
+            <h3 class="api-method">Lấy Paste (Read)</h3>
+            <p><strong>GET</strong> <code>/api/paste/:id</code></p>
+            <p><strong>GET</strong> <code>/api/paste/:id/raw</code> (Lấy nội dung thuần)</p>
+            <p><strong>PUT</strong> <code>/api/paste/:id</code> (Cập nhật nội dung)</p>
+            
+            <h3 class="api-method">Paste Gần Đây (Recent)</h3>
+            <p><strong>GET</strong> <code>/api/recent?limit=10</code></p>
+            <p class="api-note bot-highlight">Hỗ trợ bot: Messenger, Discord, Telegram</p>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script> 
+</body>
+</html>

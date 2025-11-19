@@ -1,0 +1,337 @@
+/* style.css (CodeVault Theme) */
+
+/* --- Định dạng chung --- */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 30px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: background-color 0.4s, color 0.4s;
+}
+
+.container {
+    width: 90%;
+    max-width: 900px;
+}
+
+/* Header */
+.header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.header h1 {
+    font-size: 2.8em;
+    color: #007BFF;
+    margin-bottom: 5px;
+}
+
+.header p {
+    font-size: 1.1em;
+    color: #6c757d;
+}
+
+/* --- LIGHT MODE (Mặc định: index.html) --- */
+body.light-mode {
+    background-color: #F4F6F8;
+    color: #333;
+}
+body.light-mode .header {
+    color: #333;
+}
+.note-card {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    margin-bottom: 20px;
+}
+
+/* --- Dark Mode Input Area (index.html) --- */
+#noteContent {
+    background-color: #1E1E1E;
+    color: #D4D4D4;
+    font-family: 'Consolas', 'Courier New', monospace;
+    width: 100%;
+    height: 350px;
+    padding: 15px;
+    border: 1px solid #444;
+    border-radius: 6px;
+    font-size: 0.95em;
+    resize: vertical;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+}
+
+/* --- Form Elements --- */
+input[type="text"], 
+.form-options select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1em;
+    box-sizing: border-box;
+}
+
+.config-details {
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
+    padding: 10px 15px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+}
+
+.config-details summary {
+    cursor: pointer;
+    font-weight: bold;
+    color: #007BFF;
+}
+
+.form-options {
+    display: flex;
+    gap: 15px;
+    padding: 10px 0;
+}
+.form-options select {
+    flex: 1;
+    margin-bottom: 0;
+}
+.private-option {
+    margin-top: 10px;
+    font-size: 0.9em;
+}
+
+/* Nút chính */
+#saveNoteBtn, .main-action-button {
+    width: 100%;
+    padding: 15px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#saveNoteBtn:hover, .main-action-button:hover {
+    background-color: #0056b3;
+}
+
+
+/* --- DARK MODE (view.html) --- */
+body.dark-mode {
+    background-color: #282c34;
+    color: #abb2bf;
+}
+body.dark-mode .header {
+    color: #abb2bf;
+}
+.view-card {
+    background-color: #3e4451;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    margin-bottom: 20px;
+}
+
+.view-card h2 {
+    color: #fff;
+    border-bottom: 1px solid #4a5160;
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+
+.paste-metadata {
+    font-size: 0.9em;
+    margin-bottom: 20px;
+    display: flex;
+    gap: 20px;
+    color: #a0a0a0;
+}
+
+.tag {
+    background-color: #007BFF;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+/* Khu vực Code Block (Chế độ xem) */
+.view-card pre {
+    margin-top: 20px;
+    border: none;
+    padding: 0;
+    background-color: transparent;
+}
+
+/* Nút tiện ích */
+.paste-actions button {
+    background-color: #555c69;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    font-size: 0.9em;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: background-color 0.3s;
+}
+.paste-actions button:hover {
+    background-color: #636d83;
+}
+
+/* Nút Chỉnh sửa (chế độ Lưu & Thoát) */
+#editToggleBtn.save-mode {
+    background-color: #2ecc71;
+    color: white;
+    font-weight: bold;
+}
+#editToggleBtn.save-mode:hover {
+    background-color: #27ae60;
+}
+
+
+.back-link a {
+    /* Đã điều chỉnh để nổi bật */
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 1.1em;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
+    transition: background-color 0.3s;
+}
+
+.back-link a:hover {
+    background-color: #0056b3;
+    opacity: 1;
+}
+
+.back-link {
+    text-align: center; 
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+
+/* --- Định dạng API Documentation --- */
+.api-doc-card {
+    background-color: #f7f7f7;
+    border-left: 5px solid #007BFF;
+    padding: 20px 30px; 
+}
+
+.api-doc-card h2 {
+    color: #007BFF;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 5px;
+    margin-top: 0;
+}
+
+/* ĐỊNH DẠNG NỔI BẬT CHO BOT HIGHLIGHT */
+.bot-highlight {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.1em;
+    padding: 10px 15px;
+    border-radius: 6px;
+    margin: 20px auto;
+    max-width: 600px;
+    display: block;
+    background-color: #e8f5e9;
+    color: #388e3c;
+    border: 1px solid #4caf50;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-style: normal;
+}
+
+.bot-highlight::before {
+    content: "💡 ";
+    color: #ff9800;
+}
+
+/* --- CHẾ ĐỘ LIVE EDITOR (Số dòng và Textarea) --- */
+
+.editor-wrapper {
+    display: flex;
+    font-family: monospace; 
+    background-color: #282c34; 
+    border-radius: 5px;
+    overflow: hidden; 
+    position: relative;
+    color: #abb2bf;
+    min-height: 400px; 
+    border: 1px solid #3e4451;
+    margin-top: 20px; /* Thêm khoảng cách */
+}
+
+/* Cột hiển thị số dòng */
+.line-numbers {
+    padding: 15px 10px;
+    background-color: #3e4451;
+    color: #636d83; 
+    text-align: right;
+    user-select: none;
+    line-height: 1.4em; 
+    min-width: 30px; 
+    overflow: hidden; 
+    white-space: pre; 
+    flex-shrink: 0;
+}
+
+/* Textarea chính */
+.editor-textarea {
+    flex-grow: 1;
+    padding: 15px;
+    border: none;
+    outline: none;
+    resize: none;
+    background-color: #282c34;
+    color: #abb2bf;
+    font-family: monospace;
+    font-size: 14px;
+    line-height: 1.4em;
+    tab-size: 4;
+    overflow-x: auto;
+    white-space: pre; 
+}
+
+/* Chấm trạng thái (Status Dot) */
+.status-dot {
+    display: none; 
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 8px;
+    transition: background-color 0.3s;
+    background-color: #7f8c9d;
+}
+
+/* Đang lưu (Chấm cam) */
+.saving-mode {
+    background-color: #e67e22;
+}
+
+/* Đã lưu (Chấm xanh) */
+.saved-mode {
+    background-color: #2ecc71;
+}
+
+/* ẨN NÚT CHỈNH SỬA CHUYỂN ĐỔI CHẾ ĐỘ */
+#editToggleBtn {
+    display: none !important;
+}
+
+/* Đảm bảo các khối code API không bị lỗi display */
+.api-code-block {
+    /* Giữ nguyên định dạng */
+}
