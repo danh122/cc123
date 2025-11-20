@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         try {
-            const response = await fetch('https://api-note-dangdanh-nffu.onrender.com/api/paste', { 
+            const response = await fetch('https://api-note-519q.onrender.com/api/paste', { 
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
