@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         try {
-            const response = await fetch('https://api-note-f5.onrender.com/api/paste', { 
+            const response = await fetch('https://cc123-2.onrender.com/api/paste', { 
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
